@@ -31,7 +31,7 @@ type InfoStored struct {
 	Period     int64     `json:"period"`
 	Result     string    `json:"result" orm:"size(15)"`
 	Amount     int64     `json:"amount"`
-	UserId     *User     `json:"user_id" orm:"rel(fk)"`
+	UserId     *User     `json:"user_id" orm:"rel(fk);column(user_id)"`
 	CreateTime time.Time `json:"create_time" orm:"auto_now_add;type(datetime)"`
 }
 
