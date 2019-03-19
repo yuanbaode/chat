@@ -16,7 +16,7 @@ type MainController struct {
 }
 
 func (c *MainController) Prepare() {
-	c.User = &models.User{Id: 0, Name: "张无忌"}
+	c.User = &models.User{ Name: "张无忌"}
 }
 
 func (c *MainController) Success(i interface{}) {
