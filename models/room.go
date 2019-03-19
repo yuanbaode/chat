@@ -6,7 +6,7 @@ type Room struct {
 	Id      int64          `orm:"pk" json:"id"`
 	Name    string         `orm:"size(20)" json:"name"`
 	Clients *SyncClientMap `orm:"-" json:"members"`
-	In      chan *Message  `orm:"-"`
+	In      chan *Message  `orm:"-" json:"-"`
 }
 type RoomSet struct {
 	Data map[int64]*Room

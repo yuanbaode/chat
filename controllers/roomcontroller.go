@@ -27,8 +27,7 @@ type RoomController struct {
 func (c *RoomController) GetRooms() {
 	rs := room.NewRoomService()
 	rooms := rs.GetRooms()
-	c.Data["json"] = rooms
-	c.ServeJSON()
+	c.Success(rooms)
 
 }
 func (c *RoomController) EnterRoom() {
