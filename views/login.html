@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="login" method="post">
+
+
+    <div style="width:500px;float: contour;margin:0 auto;">
+        <input id="callback" name="callback" type="hidden" style="height:30px;width:350px;padding-right:50px;" value={{.callback}}>
+        <label for="username" style="font-size:18px">用户名：</label>
+        <div style="height:35px;width:400px;position:relative;display:inline">   <!--相关位置--> <!--此处为相关位置与绝对位置联合使用-->
+            <input id="username" name="username" type="text" style="height:30px;width:350px;padding-right:50px;">
+            <span style="position:absolute;right:18px;top:2px;background-image:url('/static/img/user.jpg');height:16px;width:16px;display:inline-block;"></span>
+            <!--绝对位置-->
+        </div>
+        <br/>
+        <br/>
+        <label for="password" style="font-size:18px"> 密码：</label>
+        <div style="height:35px;width:400px;position:relative;display:inline">   <!--相关位置--> <!--此处为相关位置与绝对位置联合使用-->
+            <input id="password" name="password" type="password" style="height:30px;width:350px;padding-right:50px;">
+            <span style="position:absolute;right:16px;top:2px;background-image:url('/static/img/passwd.jpg');height:16px;width:16px;display:inline-block;"></span>
+            <!--绝对位置-->
+        </div>
+        <br/>
+        <br/>
+        <br/>
+
+        <br/>
+        <div style="width:426px;float: right;">
+            <input type="submit" value="登录" style="height:30px;width:400px;background-color:red;"/>
+        </div>
+    </div>
+</form>
+</body>
+</html>
