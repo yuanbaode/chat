@@ -26,7 +26,7 @@ type Info struct {
 }
 
 type InfoStored struct {
-	Id         int64     `json:"id" orm:"pk"`
+	Id         int64     `json:"id" orm:"pk;auto"`
 	RoomId     int64     `json:"room_id" `
 	Period     int64     `json:"period"`
 	Result     string    `json:"result" orm:"size(15)"`
