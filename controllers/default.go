@@ -14,7 +14,9 @@ type MainController struct {
 	beego.Controller
 	User *models.User
 }
-
+func (c *MainController) Prepare(){
+	c.User=&models.User{Name:"张无忌"}
+}
 
 func (c *MainController) Success(i interface{}) {
 	var m = make(map[string]interface{})

@@ -92,9 +92,9 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			}
 
 		}
-		if err != nil {
-			break
-		}
+		//if err != nil {
+		//	break
+		//}
 
 	}
 
