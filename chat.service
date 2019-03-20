@@ -4,7 +4,7 @@ Documentation=http://nginx.org/en/docs/
 After=network.target
 
 [Service]
-Type=forking
+#Type=forking
 PIDFile=/run/chat.pid
 ExecStartPre=
 ExecStart=/opt/GOPATH/src/mychatroom/chat
