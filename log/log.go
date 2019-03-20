@@ -11,7 +11,7 @@ func init() {
 	logger = logs.GetBeeLogger()
 	logger.SetLevel(beego.LevelDebug)
 	logger.EnableFuncCallDepth(true)
-	logger.SetLogger(logs.AdapterFile,`{"filename":"chat.log","level":7,"maxlines":0,"maxsize":0,"daily":true,"maxdays":10,"color":true}`)
+	logger.SetLogger(logs.AdapterFile,`{"filename":"chat.log","level":7,"daily":true,"maxdays":10,"color":true}`)
 }
 
 func Warn(format string, v ...interface{}) {
