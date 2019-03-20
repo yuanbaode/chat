@@ -40,6 +40,7 @@ func (s *RoomService) GetRooms() map[int64]*models.Room {
 	return ROOMS.Data
 }
 func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err error) {
+	s.Auth.Id=userId
 	client := models.NewClient(s.Auth, conn)
 	ROOMS.Lock.RLock()
 	room := ROOMS.Data[roomId]
