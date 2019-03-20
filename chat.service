@@ -1,0 +1,16 @@
+[Unit]
+Description=chat service
+Documentation=http://nginx.org/en/docs/
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/chat.pid
+ExecStartPre=
+ExecStart=/opt/GOPATH/src/mychatroom/chat
+ExecReload=
+ExecStop=/bin/kill -9 $(cat /run/chat.pid)
+PrivateTmp=true
+Restart=1
+[Install]
+WantedBy=multi-user.target
