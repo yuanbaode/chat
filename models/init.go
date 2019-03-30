@@ -5,6 +5,7 @@ import (
 	"mychatroom/log"
 	_ "github.com/go-sql-driver/mysql"
 	"os"
+	"time"
 )
 
 func InitModel() {
@@ -20,6 +21,7 @@ func InitModel() {
 		log.Error("database connect err:%s\n", err.Error())
 		os.Exit(1)
 	}
+	orm.DefaultTimeLoc = time.Local
 	//orm.RegisterModel(new(Room))
 	orm.RegisterModel(new(User))
 	orm.RegisterModel(new(InfoStored))
