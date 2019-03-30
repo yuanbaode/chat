@@ -47,18 +47,18 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 	ROOMS.Lock.RUnlock()
 	room.Clients.SET(strconv.Itoa(int(userId)), client)
 
-	room.In <- &models.Message{
-		MType: models.LOGIN,
-		From:  s.Auth,
-		Msg:   "login",
-	}
-	defer func() {
-		room.In <- &models.Message{
-			MType: models.LOGOUT,
-			From:  s.Auth,
-			Msg:   "logout",
-		}
-	}()
+	//room.In <- &models.Message{
+	//	MType: models.LOGIN,
+	//	From:  s.Auth,
+	//	Msg:   "login",
+	//}
+	//defer func() {
+	//	room.In <- &models.Message{
+	//		MType: models.LOGOUT,
+	//		From:  s.Auth,
+	//		Msg:   "logout",
+	//	}
+	//}()
 	//启动读协程
 
 	var (
@@ -76,17 +76,13 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			break
 		}
 		if msgType == websocket.TextMessage {
-			info := new(models.Info)
+			infoStored := new(models.InfoStored)
 			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
-			if err = json.Unmarshal(data, info); err != nil {
-
-				log.Error("info is %s\n \n unmarshl info error:%s\n", string(data), err.Error())
+			if err = models.UnmarshalInfo(data, infoStored); err != nil {
+				log.Error("unmarshl info error:%s\n",  err.Error())
 			} else {
-				infoStored := new(models.InfoStored)
+
 				infoStored.UserId = &client.User
-				infoStored.Amount = info.Amount
-				infoStored.Period = info.Period
-				infoStored.Result = info.Result
 				infoStored.RoomId = roomId
 				if err = infoStored.Insert(xOrm); err != nil {
 					log.Error("Insert info error:%s\n", err.Error())

@@ -3,6 +3,9 @@ package models
 import (
 	"time"
 	"github.com/astaxie/beego/orm"
+	"strings"
+	"regexp"
+	"strconv"
 )
 
 type MessageType int
@@ -27,20 +30,39 @@ type Info struct {
 
 type InfoStored struct {
 	Id         int64     `json:"id" orm:"pk;auto"`
-	RoomId     int64     `json:"room_id" `
+	RoomId     int64     `json:"room_id"  orm:"-"`
 	Period     int64     `json:"period"`
-	Result     string    `json:"result" orm:"size(15)"`
+	Result     string    `json:"text" orm:"size(15);column(text)"`
 	Amount     int64     `json:"amount"`
 	UserId     *User     `json:"user_id" orm:"rel(fk);column(user_id)"`
 	CreateTime time.Time `json:"create_time" orm:"auto_now_add;type(datetime)"`
 }
 
 func (i *InfoStored) TableName() string {
-	return "info_stored"
+	return "lottery_log"
 }
 func (i *InfoStored) Insert(xOrm orm.Ormer) (err error) {
 	_, err = xOrm.Insert(i)
 	return
+}
+func UnmarshalInfo(info []byte, infoStored *InfoStored) error {
+	s := string(info)
+	splitsInfo := strings.Split(s, "\\n")
+	re := regexp.MustCompile(`[1-9]{1}[0-9]*`)
+	periodS := re.FindAllString(splitsInfo[0], -1)
+	period, err := strconv.Atoi(periodS[0])
+	if err != nil {
+		return err
+	}
+	infoStored.Period = int64(period)
+	splitsInfo2 := strings.Split(splitsInfo[1], "/")
+	infoStored.Result = splitsInfo2[0]
+	amount, err := strconv.Atoi(splitsInfo2[1])
+	if err != nil {
+		return err
+	}
+	infoStored.Amount = int64(amount)
+	return nil
 }
 
 type HistoryMessage struct {
