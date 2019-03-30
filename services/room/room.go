@@ -14,7 +14,7 @@ var RoomForWHISPER *models.RoomSet
 
 func init() {
 	rooms := make(map[int64]*models.Room, 100)
-	for i := 1; i <= 100; i++ {
+	for i := 1; i <= 4; i++ {
 		room := models.NewRoom("房间" + strconv.Itoa(i))
 		room.Id = int64(i)
 		rooms[room.Id] = room
