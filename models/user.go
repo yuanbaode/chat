@@ -8,11 +8,11 @@ import (
 
 type User struct {
 	Id     int64  `orm:"pk" json:"id"`
-	Name   string `orm:"size(20)" json:"name"`
-	UserId string `orm:"size(64)" json:"user_id"`
+	Name   string `orm:"size(20);column(user_name)" json:"name"`
+	UserId string `orm:"-" json:"user_id"`
 	//CurrentRoom *Room  `orm:"rel(fk);column(current_room_id)" json:"current_room"`
 	CurrentRoom int64  `orm:"-" json:"current_room"`
-	Password    string `orm:"size(64)" json:"password"`
+	Password    string ` json:"password"`
 }
 
 func TableName() string {
