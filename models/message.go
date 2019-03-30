@@ -7,6 +7,7 @@ import (
 	"regexp"
 	"strconv"
 	"fmt"
+	"errors"
 )
 
 type MessageType int
@@ -57,8 +58,14 @@ func UnmarshalInfo(info []byte, infoStored *InfoStored) error {
 		return err
 	}
 	infoStored.Period = int64(period)
+	if len(splitsInfo) < 2 {
+		return errors.New("splitsInfo length < 2. ")
+	}
 	splitsInfo2 := strings.Split(splitsInfo[1], "/")
 	infoStored.Result = splitsInfo2[0]
+	if len(splitsInfo2) < 2 {
+		return errors.New("splitsInfo2 length < 2. ")
+	}
 	amount, err := strconv.Atoi(splitsInfo2[1])
 	if err != nil {
 		return err

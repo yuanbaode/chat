@@ -81,7 +81,6 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			if err = models.UnmarshalInfo(data, infoStored); err != nil {
 				log.Error("unmarshl info error:%s\n",  err.Error())
 			} else {
-
 				infoStored.UserId = &client.User
 				infoStored.RoomId = roomId
 				if err = infoStored.Insert(xOrm); err != nil {
