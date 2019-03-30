@@ -7,7 +7,8 @@ import (
 
 func TestUnmarshalInfo(t *testing.T) {
 
-	s := `第2408548期：\n大双/5`
+	s := `第2408548期：
+大双/5`
 	i := InfoStored{}
 	UnmarshalInfo([]byte(s), &i)
 
