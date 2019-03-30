@@ -6,6 +6,7 @@ import (
 	"strings"
 	"regexp"
 	"strconv"
+	"fmt"
 )
 
 type MessageType int
@@ -47,6 +48,7 @@ func (i *InfoStored) Insert(xOrm orm.Ormer) (err error) {
 }
 func UnmarshalInfo(info []byte, infoStored *InfoStored) error {
 	s := string(info)
+	fmt.Println(s)
 	splitsInfo := strings.Split(s, "\\n")
 	re := regexp.MustCompile(`[1-9]{1}[0-9]*`)
 	periodS := re.FindAllString(splitsInfo[0], -1)
