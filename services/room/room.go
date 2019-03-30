@@ -80,7 +80,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
 			if err = json.Unmarshal(data, info); err != nil {
 
-				log.Error("info is %s\n unmarshl info error:%s\n", string(data), err.Error())
+				log.Error("info is %s\n \n unmarshl info error:%s\n", string(data), err.Error())
 			} else {
 				infoStored := new(models.InfoStored)
 				infoStored.UserId = &client.User
