@@ -1,8 +1,12 @@
 package models
 
-import "testing"
+import (
+	"testing"
+	"fmt"
+	"time"
+)
 
 func TestRandomData(t *testing.T) {
-
-	RandomData(nil)
+	fmt.Println(time.Now().Unix())
+	//RandomData(nil)
 }

@@ -132,17 +132,41 @@ func NewRoom(name string) *Room {
 
 	}()
 	go func() {
+		switch room.Id {
+		case 1, 2:
+			randomMessage12(room)
+		case 3, 4:
+			randomMessage34(room)
+		default:
 
-		for {
-			sleepTime := getRandNum(40)
-			time.Sleep(time.Duration(sleepTime) * time.Second)
-			RandomData(room)
 		}
 
 	}()
 	return room
 }
 
+func randomMessage12(room *Room) {
+	for {
+		sleepTime := getRandNum(40)
+		difference := time.Now().Unix() - 1553834100
+		if difference%210 < 30 || difference%210 > 200 {
+			continue
+		}
+		time.Sleep(time.Duration(sleepTime) * time.Second)
+		RandomData(room)
+	}
+}
+func randomMessage34(room *Room) {
+	for {
+		sleepTime := getRandNum(40)
+		difference := time.Now().Unix() - 1553834100
+		if difference%300 < 30 || difference%210 > 290 {
+			continue
+		}
+		time.Sleep(time.Duration(sleepTime) * time.Second)
+		RandomData(room)
+	}
+}
 func RandomData(room *Room) {
 	apiUrl := `http://test.lxh.wiki/api/lottery/latest/period`
 	req, err := http.NewRequest("GET", apiUrl, nil)
