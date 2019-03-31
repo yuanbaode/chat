@@ -63,7 +63,7 @@ func (c *RoomController) EnterRoom() {
 		conn.Close()
 	}()
 	rs := room.NewRoomService()
-	rs.Auth = *c.User
+	rs.Auth = c.User
 	err = rs.EnterRoom(int64(roomId), int64(userId), conn)
 
 }
@@ -106,7 +106,7 @@ func (c *RoomController) CreateChat() {
 		conn.Close()
 	}()
 	rs := room.NewRoomService()
-	rs.Auth = *c.User
+	rs.Auth = c.User
 	err = rs.CreateChat(int64(userId), isUser, conn)
 
 }

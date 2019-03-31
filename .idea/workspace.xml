@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01bb9d3e-e8c3-471f-9aa7-8d511aa15cfa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/room/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/room/room.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +34,8 @@
       <file leaf-file-name="room.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/room/room.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+            <state relative-caret-position="-473">
+              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
               <folding>
                 <element signature="e#14#155#0" expanded="true" />
               </folding>
@@ -252,7 +248,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestRandomData in mychatroom/models">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mychatroom" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -291,8 +287,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
         <item itemvalue="Go Test.TestUnmarshalInfo in mychatroom/models" />
       </list>
     </recent_temporary>
@@ -331,7 +327,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4816825" visible="true" weight="0.108742006" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -658,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/room/room.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+        <state relative-caret-position="-473">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
           <folding>
             <element signature="e#14#155#0" expanded="true" />
           </folding>
