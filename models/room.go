@@ -147,6 +147,7 @@ func NewRoom(name string) *Room {
 }
 
 func randomMessage12(room *Room) {
+	url:=`http://test.lxh.wiki/api/lottery/latest/period/short`
 	for {
 		sleepTime := getRandNum(40)
 		difference := time.Now().Unix() - 1553834100
@@ -154,10 +155,11 @@ func randomMessage12(room *Room) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room)
+		RandomData(room,url)
 	}
 }
 func randomMessage34(room *Room) {
+	url:=`http://test.lxh.wiki/api/lottery/latest/period/long`
 	for {
 		sleepTime := getRandNum(40)
 		difference := time.Now().Unix() - 1553834100
@@ -165,11 +167,10 @@ func randomMessage34(room *Room) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room)
+		RandomData(room,url)
 	}
 }
-func RandomData(room *Room) {
-	apiUrl := `http://test.lxh.wiki/api/lottery/latest/period`
+func RandomData(room *Room,apiUrl string) {
 	req, err := http.NewRequest("GET", apiUrl, nil)
 	if err != nil {
 		return
