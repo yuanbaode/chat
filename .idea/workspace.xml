@@ -36,8 +36,8 @@
       <file leaf-file-name="room.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/room/room.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+            <state relative-caret-position="58">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding>
                 <element signature="e#14#155#0" expanded="true" />
               </folding>
@@ -57,7 +57,7 @@
       <file leaf-file-name="roomcontroller.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/roomcontroller.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
+            <state relative-caret-position="2726">
               <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
             </state>
           </provider>
@@ -75,20 +75,17 @@
       <file leaf-file-name="user.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/user.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
+            <state relative-caret-position="783">
               <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="room_test.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="room_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/room_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="33" />
-              <folding>
-                <element signature="e#16#44#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="919">
+              <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -102,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="room.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="room.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/room.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="147" column="31" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="31" />
+            <state relative-caret-position="455">
+              <caret line="190" column="5" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="190" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -159,8 +156,8 @@
         <option value="$PROJECT_DIR$/models/init.go" />
         <option value="$PROJECT_DIR$/services/room/room.go" />
         <option value="$PROJECT_DIR$/controllers/roomcontroller.go" />
-        <option value="$PROJECT_DIR$/models/room_test.go" />
         <option value="$PROJECT_DIR$/models/room.go" />
+        <option value="$PROJECT_DIR$/models/room_test.go" />
       </list>
     </option>
   </component>
@@ -187,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,7 +221,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestRandomData in mychatroom/models">
+  <component name="RunManager" selected="Go Test.TestXXX in mychatroom/models">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mychatroom" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -285,13 +282,26 @@
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestUnmarshalInfo$" />
     </configuration>
+    <configuration name="TestXXX in mychatroom/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="mychatroom" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="mychatroom/models" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestXXX$" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Test.TestUnmarshalInfo in mychatroom/models" />
       <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
+      <item itemvalue="Go Test.TestXXX in mychatroom/models" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestXXX in mychatroom/models" />
         <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestUnmarshalInfo in mychatroom/models" />
@@ -334,15 +344,15 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4788961" visible="true" weight="0.1108742" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47761193" visible="true" weight="0.1119403" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
-      <window_info id="Structure" order="1" sideWeight="0.5211039" side_tool="true" visible="true" weight="0.1108742" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.19716775" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info id="Structure" order="1" sideWeight="0.52238804" side_tool="true" visible="true" weight="0.1119403" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19716775" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -606,16 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/room_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#16#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/client.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -625,14 +625,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/roomcontroller.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
+        <state relative-caret-position="2726">
           <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/user.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
+        <state relative-caret-position="783">
           <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
         </state>
       </provider>
@@ -646,8 +646,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/room/room.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+        <state relative-caret-position="58">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#14#155#0" expanded="true" />
           </folding>
@@ -656,8 +656,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/room.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="147" column="31" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="31" />
+        <state relative-caret-position="455">
+          <caret line="190" column="5" lean-forward="true" selection-start-line="170" selection-start-column="4" selection-end-line="190" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/room_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
         </state>
       </provider>
     </entry>

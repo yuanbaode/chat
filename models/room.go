@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"math/rand"
 	"time"
+	"net"
 )
 
 var TEXTARRAY []string
@@ -173,7 +174,16 @@ func RandomData(room *Room) {
 	if err != nil {
 		return
 	}
-	client := &http.Client{}
+	transport := &http.Transport{
+		Dial: (&net.Dialer{
+			Timeout: 5 * time.Second,
+		}).Dial,
+		MaxIdleConns: 2,
+	}
+	client := &http.Client{
+		Timeout:   time.Second * 5,
+		Transport: transport,
+	}
 	resp, err := client.Do(req)
 	if err != nil {
 		return
@@ -181,10 +191,10 @@ func RandomData(room *Room) {
 	if resp == nil {
 		return
 	}
+	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
 		return
 	}
-	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return
