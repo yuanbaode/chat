@@ -123,7 +123,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 }
 
 func (s *RoomService) CreateChat(userId int64, isUser bool, conn *websocket.Conn) (err error) {
-	client := models.NewClient(s.Auth, conn)
+	client := models.NewClient(*s.Auth, conn)
 	RoomForWHISPER.Lock.Lock()
 	room, ok := RoomForWHISPER.Data[userId]
 	ROOMS.Lock.Unlock()
