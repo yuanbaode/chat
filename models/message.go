@@ -32,7 +32,7 @@ type Info struct {
 
 type InfoStored struct {
 	Id         int64     `json:"id" orm:"pk;auto"`
-	RoomId     int64     `json:"room_id"  orm:"-"`
+	RoomId     int64     `json:"room_id" `
 	Period     int64     `json:"period"`
 	Result     string    `json:"text" orm:"size(15);column(text)"`
 	Amount     int64     `json:"amount"`

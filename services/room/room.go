@@ -30,7 +30,7 @@ func init() {
 }
 
 type RoomService struct {
-	Auth models.User
+	Auth *models.User
 }
 
 func NewRoomService() *RoomService {
@@ -40,8 +40,13 @@ func (s *RoomService) GetRooms() map[int64]*models.Room {
 	return ROOMS.Data
 }
 func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err error) {
-	s.Auth.Id = userId
-	client := models.NewClient(s.Auth, conn)
+
+	s.Auth, err = s.Auth.GetUserById(models.ORM, 1)
+	if err != nil {
+		log.Error("getUser error: %s", err.Error())
+		return
+	}
+	client := models.NewClient(*s.Auth, conn)
 	ROOMS.Lock.RLock()
 	room := ROOMS.Data[roomId]
 	ROOMS.Lock.RUnlock()
@@ -79,7 +84,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			infoStored := new(models.InfoStored)
 			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
 			if err = models.UnmarshalInfo(data, infoStored); err != nil {
-				log.Error("unmarshl info error:%s\n",  err.Error())
+				log.Error("unmarshl info error:%s\n", err.Error())
 			} else {
 				infoStored.UserId = &client.User
 				infoStored.RoomId = roomId
