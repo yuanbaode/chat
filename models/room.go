@@ -29,72 +29,73 @@ func init() {
 		AmountArray = append(AmountArray, int64(i*5))
 	}
 	UserNameArray := []string{
-		"酒与心事",
-		"淡墨",
-		"酒伴久身",
-		"无力自拔",
-		"时间路人",
-		"無心",
-		"零度°",
-		"凉薄之人",
-		"空心",
-		"社会不惯人",
-		"垂涎自由",
-		"执酒共酌",
-		"寄与心",
-		"挽歌少年",
-		"暮年",
-		"孤独酒馆",
-		"痴骨ら",
-		"同归",
-		"不抽烟C",
-		"曾天真现成熟",
-		"我怕的是人心",
-		"淡然一笑",
-		"岁月之沉淀",
-		"单身泽",
-		"孤寂芳心",
-		"笑魇醉看",
-		"喜喜",
-		"不羁",
-		"余生没有北方",
-		"暴雨柴舟",
-		"白衣决绝提剑",
-		"耳边情话",
+		"刘思恬4月飞日本",
+		"蔡莉",
+		"余生",
+		"李萱",
+		" sunru ",
+		"类类",
+		"蕾蕾",
+		"夏磊瓒",
+		"乐乐",
+		"楽",
+		"Zora",
+		"997_🙃",
+		"冷雪纯",
+		"🔆Catherine",
+		"Macro",
+		"恩戴米恩",
+		"章鱼妹妹",
+		"Kate HK",
+		"LeunGyH",
+		"无恙",
+		"ZjhZp",
+		"🦍🦍久",
+		"Fanfan",
+		"空白",
+		"热爱",
+		"SEUNGRI",
+		"思瑶",
+		"J",
+		"Better me",
+		"梁小朵儿",
+		"Elio",
+		"kaill",
+
 	}
 	AvatarUrl := map[string]string{
-		"酒与心事":   "http://wx.qlogo.cn/mmhead/ver_1/nUIE5cFNcUjbZ2psXz8s9YbE8wWRkb5WtWmiariawqA6HzSbAia9s08ITJx9iccm2Wvgke3oXQ6lV9Kgs9f0gAc42naThfib97U7KAmIlic8FHDP8/0",
-		"淡墨":     "http://wx.qlogo.cn/mmhead/ver_1/AyznXDIVWWSlb5PwscBtIXgAYX2aicxJNicz8lAmxeGJItAYtnrCMNiciaNSL3ia3ZTC1kHbP9qGnQGFokvAQfRZlzictCHYGuZAZzicnfDzxwMibt4/0",
-		"酒伴久身":   "http://wx.qlogo.cn/mmhead/ver_1/WicYeqZmJqnzWc8dXL1mv9b3Qge1fFQ58h0e38YmVVW1WkJwpokm9yssDbRyBIDiaJr7msppGnqOeLXyFyvcbcyFq8CsrqB2pkUKUUl8KJSr0/0",
-		"无力自拔":   "http://wx.qlogo.cn/mmhead/ver_1/cD4KiafGAQWzv1fRCRMFdVpkGvlcEQJf1nxLBKIuQsdoeNza4dz24ibC0suHjaicBI1aHD3vB2eG3DcgzAItwHfJA/0",
-		"时间路人":   "http://wx.qlogo.cn/mmhead/ver_1/LP8joYcjEVXxJibadJ3SUwneMhNmyfxU4knlgDLgd62AA4Vqd07PGe98aOiaostaG0ntYyNxbZtfc9kGZc4w1malcpwdIicprYCTyngER7h0qk/0",
-		"無心":     "http://wx.qlogo.cn/mmhead/ver_1/VGLl0k5AL3VlwTvBHrk3BTh29JJS9Nq0qqVXRibCRURURWK8QFZf8oQfMUoH0JeSreZSkKzFYuvl4n99lVXIt5H6uPALCLEa0cqYlGODTh5g/0",
-		"零度°":    "http://wx.qlogo.cn/mmhead/ver_1/e0RAMQyJmX5bRM19TqK0UHn8kEBUOH9XxDoBBEGviaYRIXab8OiaEsHP0yTWglM1eaLpJIyOJcJlxzRa69hGkCDMyElCC8ScN3uOKibDdCTIT4/0",
-		"凉薄之人":   "http://wx.qlogo.cn/mmhead/ver_1/lm61K5jVHQGV4AmTM3j1ibO3YUMnMFxr4t4MKxs6C9gvQG6dCOBTiaQKaWaM0V1UG6Bob9tuicGIQ1M5vTia8ejC59xQr03ReDK5NV5F3gPyibNs/0",
-		"空心":     "http://wx.qlogo.cn/mmhead/ver_1/FmjAjfmdAt13P9HTB5OuKgNqDIFeAc3WpNaSficzQFlQ2ZxTMCa3qtHs67aJr6NLibGDzndzSQEv9IGQ5BaahLd9RG1WiaQggNiaYhxK6BicnhK4/0",
-		"社会不惯人":  "http://wx.qlogo.cn/mmhead/ver_1/sic79jWOBBPickrqLOAJNS1nkjnNtSnRcxVE8DsOJNibvTuibBCNBZqf4fEooSa8xYCgQjSaaGkG6o9qzg3GZeZmyKwhx6c1W9FfkRCZzibje8Vs/0",
-		"垂涎自由":   "http://wx.qlogo.cn/mmhead/ver_1/G79uqtUmOSl8keZzC7QKI5HyX1XMaGleKnWXGajYDs7LP5vXGTjJfJqy4Bc3458qrsHSrRbEo7hFH6pDiauC6X1wibCWiaJ0icHehOY961bVSu0/0",
-		"执酒共酌":   "http://wx.qlogo.cn/mmhead/ver_1/tz0jZy069QmgJRxOtWaA70E3l7FbdayJ8jlic6VU5SXrq2NrJpKqU83Ra4JjvAIXVoTXGHupia0XXtPRoibcxPlBGvGsMJFTZtjJfw0YBX0kDo/0",
-		"寄与心":    "http://wx.qlogo.cn/mmhead/ver_1/7KKibrXnW7CuNQ12EEUvUqzzP7kWFaSD0SzuQkibP50nVgyJbG2H34YabNDyicBYMyAq68p3kq7pBW3rI2YJMcJmnsZl871uzjLUib7GxsKiciavs/0",
-		"挽歌少年":   "http://wx.qlogo.cn/mmhead/ver_1/xjSVHwgWYf0Jre8JEILqyfF7p8mpsnCkyRCic9bt7icuInGBaDLGIFiaL0m8mwia8BIL6xqdM2bFwyn6AYGX7Ek5AbD6RicKjMibMYuz81ibqPticiag/0",
-		"暮年":     "http://wx.qlogo.cn/mmhead/ver_1/ziaAPickWibrvQUs4icHZrUJe5bH0byxejTnuoCQ0bKxu22MibSQtEDbsIgtEnHgBiaAiahcMWvA7X5iaXN2GTNVn0h2GQ/0",
-		"孤独酒馆":   "http://wx.qlogo.cn/mmhead/ver_1/RYvhphP7ibxoH5YpTsEwkiczRDTppb4qXYiaKKhp27hugS4doI27oxvmK9HFdljRwk5Btj38FicvCKOBJU2U1ygQ31pUqnGZmAsqzDSADdf6rsU/0",
-		"痴骨ら":    "http://wx.qlogo.cn/mmhead/ver_1/2gGxR9e05fC2X64YKk5gKT6tavvo4U6Od3hHibShY9xjM9c9ibcrBbbMHDflnX5Fw8fcjpDFFric57uzdqTd8S9J7B9BgwhQicDkmxGsM7WPw08/0",
-		"同归":     "http://wx.qlogo.cn/mmhead/ver_1/jzDWywOuK2MWerqNbcKRIicUj1xQib1RtcHu02lzfsUcVIvPotDST1MHGBWx0Cc7XbeLec3DABViaOa8gicvHorPaaTxt9zFpTSu3rNjHZXvmibk/0",
-		"不抽烟C":   "http://wx.qlogo.cn/mmhead/ver_1/wxedibNGZxQyNS1Bzx9c1z1JOgCpOKX0ZXFltkiaeZQxiaY0EtxuRc86dhxJicQ1sL2qvToh5820PhUDohdTVJrO8D8KJCTcE8VMCV0S7yiaW7G0/0",
-		"曾天真现成熟": "http://wx.qlogo.cn/mmhead/ver_1/ABn7gMSOFMibmV5ZU7MoztTARGHoVEYbNcicucCxKGrsmYRv81kCVL5ial54PRSTNhBqNpU3SIm1jRhZrW4dibkOgNiaEORzdVtQ3iaoHSBv2k9lQ/0",
-		"我怕的是人心": "http://wx.qlogo.cn/mmhead/ver_1/VLz5IPlxgpSDmMgx3rwicwib90yjSlR5IkSPiciaiaU1ibONBia9e5dGlTnJGpV9WqM0SNDz00z12CZEVJoJqAg464UB5ibEUG09cm3QNImOlGwyu1E/0",
-		"淡然一笑":   "http://wx.qlogo.cn/mmhead/ver_1/u9vRj55tZbsBibCIvpOKV8toIaLeWGGBEZgeZoML5ktboXlJU7opSZEs7N2v1B03tL1dwvHunafsD6FUFcUJaH1bnOvIpfESSmBtiab2mcbwM/0",
-		"岁月之沉淀":  "http://wx.qlogo.cn/mmhead/ver_1/XO5gh6yZyUbicpGEoh6b0PrVRvlyJxjV3IiavboEicBhjqwxJQIGzQgTPUJwvcUMGONbnx3EstM6L2z8kHLBVtlhZ6I12Y7ia1pgm0ibZTFQf3aQ/0",
-		"单身泽":    "http://wx.qlogo.cn/mmhead/ver_1/gRjkE42XemnoUQlnicpIAjaowfic3kofIuKMzdI1zWGvw6ujbjHVGRESo6E7kSxVsciaHY0tiavFNYVb3On1UIgcicQ/0",
-		"孤寂芳心":   "http://wx.qlogo.cn/mmhead/ver_1/kH5ke8U2iaerHc2m2ibsicGZc6BWtk10rTYp2HHiafJdhAF7iapp2TyymvbgY1HdcD5RrEBDjtOm3OkQGNPEibTFp4Ns5lKGYFJaEOO1bW8M0yDFA/0",
-		"笑魇醉看":   "http://wx.qlogo.cn/mmhead/cypR72jV8BHjDwNh3Nc1YcsgzmiaZacpR1dgiaibt4QuMs/0",
-		"喜喜":     "http://wx.qlogo.cn/mmhead/ver_1/8ic8gRyChQEhN89e4joeLjRm0jOoQaTXcLHKNv2AxaNxannuEL9U4TbJwp03yZ1uy5gN8lmrVZZkcOZjfDf1VKzpcjiaH7GqwtlRGR6ZUKEmI/0",
-		"不羁":     "http://wx.qlogo.cn/mmhead/ver_1/H8IwapZfbbr1pWxQFwyZvuDbLzK7vHnHKkRDyzbibd0JhYiaaTXdaFzdPayjJIAD3ORfiaibSThtwU4ABfegVsypFS6tMGziaju2WdUOic6HVRUcs/0",
-		"余生没有北方": "http://wx.qlogo.cn/mmhead/ver_1/u7Prpo2OHmapV9u6U7vaqy4ouP778aY4GI4icutyd82CjGtzG73OMSuwOtrhibibIWSCjSmxtuyCrRnVrKXqecodA/0",
-		"暴雨柴舟":   "http://wx.qlogo.cn/mmhead/ver_1/lqkl3A5CrcKHcaJNWbCBa5pmNGKW9dXg1Ju9RfQyPubibwbUt6gkYfrRg1bAy3paxSsHNiaUicaXZoicl3BIIgMiaOeBlCSfDaFPMF5AYS5hSTZg/0",
-		"白衣决绝提剑": "http://wx.qlogo.cn/mmhead/ver_1/ethF5twU40vQKyEcR9XNnUrOY9X6YiaKfEvTTRuBZ4ciaJ6He1KrG1oP03GL78O1N5bIhhIOkxT5NjHN1iamqc1T8cm1KsV7AHbHrtN3hIyYpU/0",
-		"耳边情话":   "http://wx.qlogo.cn/mmhead/ver_1/vCiclpLjonLUzmInas7fYw85bEWe9ibvRbg3ygXavtrz1o73tJWANNLbIrw1pNtnYAnhFXkmv29RAT67e4V4N5O9Fec0WV8wN6iah21RaZ4jgE/0",
+		"刘思恬4月飞日本": "http://wx.qlogo.cn/mmhead/ver_1/nUIE5cFNcUjbZ2psXz8s9YbE8wWRkb5WtWmiariawqA6HzSbAia9s08ITJx9iccm2Wvgke3oXQ6lV9Kgs9f0gAc42naThfib97U7KAmIlic8FHDP8/0",
+		"蔡莉":       "http://wx.qlogo.cn/mmhead/ver_1/AyznXDIVWWSlb5PwscBtIXgAYX2aicxJNicz8lAmxeGJItAYtnrCMNiciaNSL3ia3ZTC1kHbP9qGnQGFokvAQfRZlzictCHYGuZAZzicnfDzxwMibt4/0",
+		"余生":       "http://wx.qlogo.cn/mmhead/ver_1/WicYeqZmJqnzWc8dXL1mv9b3Qge1fFQ58h0e38YmVVW1WkJwpokm9yssDbRyBIDiaJr7msppGnqOeLXyFyvcbcyFq8CsrqB2pkUKUUl8KJSr0/0",
+		"李萱":       "http://wx.qlogo.cn/mmhead/ver_1/cD4KiafGAQWzv1fRCRMFdVpkGvlcEQJf1nxLBKIuQsdoeNza4dz24ibC0suHjaicBI1aHD3vB2eG3DcgzAItwHfJA/0",
+		" sunru ":     "http://wx.qlogo.cn/mmhead/ver_1/LP8joYcjEVXxJibadJ3SUwneMhNmyfxU4knlgDLgd62AA4Vqd07PGe98aOiaostaG0ntYyNxbZtfc9kGZc4w1malcpwdIicprYCTyngER7h0qk/0",
+		"类类":       "http://wx.qlogo.cn/mmhead/ver_1/VGLl0k5AL3VlwTvBHrk3BTh29JJS9Nq0qqVXRibCRURURWK8QFZf8oQfMUoH0JeSreZSkKzFYuvl4n99lVXIt5H6uPALCLEa0cqYlGODTh5g/0",
+		"蕾蕾":      "http://wx.qlogo.cn/mmhead/ver_1/e0RAMQyJmX5bRM19TqK0UHn8kEBUOH9XxDoBBEGviaYRIXab8OiaEsHP0yTWglM1eaLpJIyOJcJlxzRa69hGkCDMyElCC8ScN3uOKibDdCTIT4/0",
+		"夏磊瓒":     "http://wx.qlogo.cn/mmhead/ver_1/lm61K5jVHQGV4AmTM3j1ibO3YUMnMFxr4t4MKxs6C9gvQG6dCOBTiaQKaWaM0V1UG6Bob9tuicGIQ1M5vTia8ejC59xQr03ReDK5NV5F3gPyibNs/0",
+		"乐乐":       "http://wx.qlogo.cn/mmhead/ver_1/FmjAjfmdAt13P9HTB5OuKgNqDIFeAc3WpNaSficzQFlQ2ZxTMCa3qtHs67aJr6NLibGDzndzSQEv9IGQ5BaahLd9RG1WiaQggNiaYhxK6BicnhK4/0",
+		"楽":    "http://wx.qlogo.cn/mmhead/ver_1/sic79jWOBBPickrqLOAJNS1nkjnNtSnRcxVE8DsOJNibvTuibBCNBZqf4fEooSa8xYCgQjSaaGkG6o9qzg3GZeZmyKwhx6c1W9FfkRCZzibje8Vs/0",
+		"Zora":     "http://wx.qlogo.cn/mmhead/ver_1/G79uqtUmOSl8keZzC7QKI5HyX1XMaGleKnWXGajYDs7LP5vXGTjJfJqy4Bc3458qrsHSrRbEo7hFH6pDiauC6X1wibCWiaJ0icHehOY961bVSu0/0",
+		"997_🙃":     "http://wx.qlogo.cn/mmhead/ver_1/tz0jZy069QmgJRxOtWaA70E3l7FbdayJ8jlic6VU5SXrq2NrJpKqU83Ra4JjvAIXVoTXGHupia0XXtPRoibcxPlBGvGsMJFTZtjJfw0YBX0kDo/0",
+		"冷雪纯":      "http://wx.qlogo.cn/mmhead/ver_1/7KKibrXnW7CuNQ12EEUvUqzzP7kWFaSD0SzuQkibP50nVgyJbG2H34YabNDyicBYMyAq68p3kq7pBW3rI2YJMcJmnsZl871uzjLUib7GxsKiciavs/0",
+		"🔆Catherine":     "http://wx.qlogo.cn/mmhead/ver_1/xjSVHwgWYf0Jre8JEILqyfF7p8mpsnCkyRCic9bt7icuInGBaDLGIFiaL0m8mwia8BIL6xqdM2bFwyn6AYGX7Ek5AbD6RicKjMibMYuz81ibqPticiag/0",
+		"Macro":       "http://wx.qlogo.cn/mmhead/ver_1/ziaAPickWibrvQUs4icHZrUJe5bH0byxejTnuoCQ0bKxu22MibSQtEDbsIgtEnHgBiaAiahcMWvA7X5iaXN2GTNVn0h2GQ/0",
+		"恩戴米恩":     "http://wx.qlogo.cn/mmhead/ver_1/RYvhphP7ibxoH5YpTsEwkiczRDTppb4qXYiaKKhp27hugS4doI27oxvmK9HFdljRwk5Btj38FicvCKOBJU2U1ygQ31pUqnGZmAsqzDSADdf6rsU/0",
+		"章鱼妹妹":      "http://wx.qlogo.cn/mmhead/ver_1/2gGxR9e05fC2X64YKk5gKT6tavvo4U6Od3hHibShY9xjM9c9ibcrBbbMHDflnX5Fw8fcjpDFFric57uzdqTd8S9J7B9BgwhQicDkmxGsM7WPw08/0",
+		"Kate HK":       "http://wx.qlogo.cn/mmhead/ver_1/jzDWywOuK2MWerqNbcKRIicUj1xQib1RtcHu02lzfsUcVIvPotDST1MHGBWx0Cc7XbeLec3DABViaOa8gicvHorPaaTxt9zFpTSu3rNjHZXvmibk/0",
+		"LeunGyH":     "http://wx.qlogo.cn/mmhead/ver_1/wxedibNGZxQyNS1Bzx9c1z1JOgCpOKX0ZXFltkiaeZQxiaY0EtxuRc86dhxJicQ1sL2qvToh5820PhUDohdTVJrO8D8KJCTcE8VMCV0S7yiaW7G0/0",
+		"无恙":   "http://wx.qlogo.cn/mmhead/ver_1/ABn7gMSOFMibmV5ZU7MoztTARGHoVEYbNcicucCxKGrsmYRv81kCVL5ial54PRSTNhBqNpU3SIm1jRhZrW4dibkOgNiaEORzdVtQ3iaoHSBv2k9lQ/0",
+		"ZjhZp":   "http://wx.qlogo.cn/mmhead/ver_1/VLz5IPlxgpSDmMgx3rwicwib90yjSlR5IkSPiciaiaU1ibONBia9e5dGlTnJGpV9WqM0SNDz00z12CZEVJoJqAg464UB5ibEUG09cm3QNImOlGwyu1E/0",
+		"🦍🦍久":     "http://wx.qlogo.cn/mmhead/ver_1/u9vRj55tZbsBibCIvpOKV8toIaLeWGGBEZgeZoML5ktboXlJU7opSZEs7N2v1B03tL1dwvHunafsD6FUFcUJaH1bnOvIpfESSmBtiab2mcbwM/0",
+		"Fanfan":    "http://wx.qlogo.cn/mmhead/ver_1/XO5gh6yZyUbicpGEoh6b0PrVRvlyJxjV3IiavboEicBhjqwxJQIGzQgTPUJwvcUMGONbnx3EstM6L2z8kHLBVtlhZ6I12Y7ia1pgm0ibZTFQf3aQ/0",
+		"空白":      "http://wx.qlogo.cn/mmhead/ver_1/gRjkE42XemnoUQlnicpIAjaowfic3kofIuKMzdI1zWGvw6ujbjHVGRESo6E7kSxVsciaHY0tiavFNYVb3On1UIgcicQ/0",
+		"热爱":     "http://wx.qlogo.cn/mmhead/ver_1/kH5ke8U2iaerHc2m2ibsicGZc6BWtk10rTYp2HHiafJdhAF7iapp2TyymvbgY1HdcD5RrEBDjtOm3OkQGNPEibTFp4Ns5lKGYFJaEOO1bW8M0yDFA/0",
+		"SEUNGRI":     "http://wx.qlogo.cn/mmhead/cypR72jV8BHjDwNh3Nc1YcsgzmiaZacpR1dgiaibt4QuMs/0",
+		"思瑶":       "http://wx.qlogo.cn/mmhead/ver_1/8ic8gRyChQEhN89e4joeLjRm0jOoQaTXcLHKNv2AxaNxannuEL9U4TbJwp03yZ1uy5gN8lmrVZZkcOZjfDf1VKzpcjiaH7GqwtlRGR6ZUKEmI/0",
+		"J":       "http://wx.qlogo.cn/mmhead/ver_1/H8IwapZfbbr1pWxQFwyZvuDbLzK7vHnHKkRDyzbibd0JhYiaaTXdaFzdPayjJIAD3ORfiaibSThtwU4ABfegVsypFS6tMGziaju2WdUOic6HVRUcs/0",
+		"Better me":   "http://wx.qlogo.cn/mmhead/ver_1/u7Prpo2OHmapV9u6U7vaqy4ouP778aY4GI4icutyd82CjGtzG73OMSuwOtrhibibIWSCjSmxtuyCrRnVrKXqecodA/0",
+		"梁小朵儿":     "http://wx.qlogo.cn/mmhead/ver_1/lqkl3A5CrcKHcaJNWbCBa5pmNGKW9dXg1Ju9RfQyPubibwbUt6gkYfrRg1bAy3paxSsHNiaUicaXZoicl3BIIgMiaOeBlCSfDaFPMF5AYS5hSTZg/0",
+		"Elio":   "http://wx.qlogo.cn/mmhead/ver_1/ethF5twU40vQKyEcR9XNnUrOY9X6YiaKfEvTTRuBZ4ciaJ6He1KrG1oP03GL78O1N5bIhhIOkxT5NjHN1iamqc1T8cm1KsV7AHbHrtN3hIyYpU/0",
+		"kaill":     "http://wx.qlogo.cn/mmhead/ver_1/vCiclpLjonLUzmInas7fYw85bEWe9ibvRbg3ygXavtrz1o73tJWANNLbIrw1pNtnYAnhFXkmv29RAT67e4V4N5O9Fec0WV8wN6iah21RaZ4jgE/0",
 	}
 
 	UserArray = make([]User, 0, 100)
@@ -147,7 +148,7 @@ func NewRoom(name string) *Room {
 }
 
 func randomMessage12(room *Room) {
-	url:=`http://test.lxh.wiki/api/lottery/latest/period/short`
+	url := `http://test.lxh.wiki/api/lottery/latest/period/short`
 	for {
 		sleepTime := getRandNum(10)
 		difference := time.Now().Unix() - 1553834100
@@ -155,11 +156,11 @@ func randomMessage12(room *Room) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room,url)
+		RandomData(room, url)
 	}
 }
 func randomMessage34(room *Room) {
-	url:=`http://test.lxh.wiki/api/lottery/latest/period/long`
+	url := `http://test.lxh.wiki/api/lottery/latest/period/long`
 	for {
 		sleepTime := getRandNum(40)
 		difference := time.Now().Unix() - 1553834100
@@ -167,10 +168,10 @@ func randomMessage34(room *Room) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room,url)
+		RandomData(room, url)
 	}
 }
-func RandomData(room *Room,apiUrl string) {
+func RandomData(room *Room, apiUrl string) {
 	req, err := http.NewRequest("GET", apiUrl, nil)
 	if err != nil {
 		return
@@ -210,7 +211,7 @@ func RandomData(room *Room,apiUrl string) {
 	room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
 ` + getText() + "/" + strconv.Itoa(getAmount())}
 }
-func RandomData12(room *Room,apiUrl string) {
+func RandomData12(room *Room, apiUrl string) {
 	req, err := http.NewRequest("GET", apiUrl, nil)
 	if err != nil {
 		return
@@ -247,8 +248,8 @@ func RandomData12(room *Room,apiUrl string) {
 	if err = json.Unmarshal(body, data); err != nil {
 		return
 	}
-	count:=getRandNum(6)
-	for i:=0;i<count;i++{
+	count := getRandNum(6)
+	for i := 0; i < count; i++ {
 
 		room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
 ` + getText() + "/" + strconv.Itoa(getAmount())}
