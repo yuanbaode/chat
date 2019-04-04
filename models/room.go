@@ -150,7 +150,7 @@ func NewRoom(name string) *Room {
 func randomMessage12(room *Room) {
 	url := `http://test.lxh.wiki/api/lottery/latest/period/short`
 	for {
-		sleepTime := getRandNum(10)
+		sleepTime := getRandNum(3)
 		difference := time.Now().Unix() - 1553834100
 		if difference%210 < 30 || difference%210 > 200 {
 			continue
@@ -248,9 +248,8 @@ func RandomData12(room *Room, apiUrl string) {
 	if err = json.Unmarshal(body, data); err != nil {
 		return
 	}
-	count := getRandNum(8)
+	count := getRandNum(4)
 	for i := 0; i < count; i++ {
-
 		room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
 ` + getText() + "/" + strconv.Itoa(getAmount())}
 	}
