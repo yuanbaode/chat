@@ -156,7 +156,7 @@ func randomMessage12(room *Room) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room, url)
+		RandomData12(room, url)
 	}
 }
 func randomMessage34(room *Room) {
@@ -248,7 +248,7 @@ func RandomData12(room *Room, apiUrl string) {
 	if err = json.Unmarshal(body, data); err != nil {
 		return
 	}
-	count := getRandNum(6)
+	count := getRandNum(8)
 	for i := 0; i < count; i++ {
 
 		room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
