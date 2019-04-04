@@ -149,7 +149,7 @@ func NewRoom(name string) *Room {
 func randomMessage12(room *Room) {
 	url:=`http://test.lxh.wiki/api/lottery/latest/period/short`
 	for {
-		sleepTime := getRandNum(40)
+		sleepTime := getRandNum(20)
 		difference := time.Now().Unix() - 1553834100
 		if difference%210 < 30 || difference%210 > 200 {
 			continue
