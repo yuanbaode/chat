@@ -149,7 +149,7 @@ func NewRoom(name string) *Room {
 func randomMessage12(room *Room) {
 	url:=`http://test.lxh.wiki/api/lottery/latest/period/short`
 	for {
-		sleepTime := getRandNum(20)
+		sleepTime := getRandNum(10)
 		difference := time.Now().Unix() - 1553834100
 		if difference%210 < 30 || difference%210 > 200 {
 			continue
@@ -209,6 +209,51 @@ func RandomData(room *Room,apiUrl string) {
 	}
 	room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
 ` + getText() + "/" + strconv.Itoa(getAmount())}
+}
+func RandomData12(room *Room,apiUrl string) {
+	req, err := http.NewRequest("GET", apiUrl, nil)
+	if err != nil {
+		return
+	}
+	transport := &http.Transport{
+		Dial: (&net.Dialer{
+			Timeout: 5 * time.Second,
+		}).Dial,
+		MaxIdleConns: 2,
+	}
+	client := &http.Client{
+		Timeout:   time.Second * 5,
+		Transport: transport,
+	}
+	resp, err := client.Do(req)
+	if err != nil {
+		return
+	}
+	if resp == nil {
+		return
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		return
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return
+	}
+	type respData struct {
+		Data int
+	}
+	data := &respData{}
+	if err = json.Unmarshal(body, data); err != nil {
+		return
+	}
+	count:=getRandNum(6)
+	for i:=0;i<count;i++{
+
+		room.In <- &Message{GROUPCHAT, getRandonUser(), "第" + strconv.Itoa(data.Data) + `期：
+` + getText() + "/" + strconv.Itoa(getAmount())}
+	}
+
 }
 func getRandNum(range_ int) int {
 	return rand.Intn(range_)
