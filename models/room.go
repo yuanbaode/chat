@@ -163,7 +163,7 @@ func randomMessage13(room *Room) {
 func randomMessage24(room *Room) {
 	url := `https://api.erong28.com/api/lottery/latest/period/long`
 	for {
-		sleepTime := getRandNum(40)
+		sleepTime := getRandNum(20)
 		difference := time.Now().Unix() - 1553834100
 		if difference%300 < 30 || difference%210 > 290 {
 			continue
