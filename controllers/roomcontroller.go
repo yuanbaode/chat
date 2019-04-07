@@ -30,6 +30,43 @@ func (c *RoomController) GetRooms() {
 	c.Success(rooms)
 
 }
+
+func (c *RoomController) BroadcastRoom(){
+	var err error
+	var data interface{}
+	defer func() {
+		if err != nil {
+			c.Error(err)
+		} else {
+			c.Success(data)
+		}
+
+	}()
+	rId := c.Ctx.Input.Query(":room_id")
+	roomId, err := strconv.Atoi(rId)
+	if err != nil {
+		log.Error("invalid input data, roomId :%s illegal . ", rId)
+		return
+	}
+	uId := c.Ctx.Input.Query(":user_id")
+	userId, err := strconv.Atoi(uId)
+	if err != nil {
+		log.Error("invalid input data, userId :%s illegal . ", rId)
+		return
+	}
+	conn, err := Upgrade.Upgrade(c.Ctx.ResponseWriter, c.Ctx.Request, nil)
+	if err != nil {
+		log.Error("new ws connect faild .  err:%s\n", err.Error())
+		err = errs.WS_CONNECT_FAILD
+		return
+	}
+	defer func() {
+		conn.Close()
+	}()
+	rs := room.NewRoomService()
+	rs.Auth = c.User
+	err = rs.BroadcastRoom(int64(roomId), int64(userId), conn)
+}
 func (c *RoomController) EnterRoom() {
 	var err error
 	var data interface{}

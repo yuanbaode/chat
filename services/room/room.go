@@ -141,6 +141,31 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 	//}
 	return
 }
+func (s *RoomService) BroadcastRoom(roomId, userId int64, conn *websocket.Conn) (err error) {
+	ROOMS.Lock.Lock()
+	room := ROOMS.Data[roomId]
+	ROOMS.Lock.Unlock()
+	var (
+		msgType int
+		data    []byte
+	)
+
+	for {
+		msgType, data, err = conn.ReadMessage()
+		if err != nil {
+			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
+				log.Error("error: %s", err.Error())
+			}
+			log.Warn("ReadMessage err:%s\n", err.Error())
+			break
+		}
+		if msgType == websocket.TextMessage {
+			room.In <- &models.Message{models.GROUPCHAT, models.User{}, string(data)}
+
+		}
+	}
+	return
+}
 
 func (s *RoomService) CreateChat(userId int64, isUser bool, conn *websocket.Conn) (err error) {
 	client := models.NewClient(*s.Auth, conn)

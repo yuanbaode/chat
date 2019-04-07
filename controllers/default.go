@@ -25,7 +25,7 @@ func (c *MainController) Prepare() {
 		}
 	}()
 	author := c.Ctx.Input.Header("Authorization")
-	log.Info("header is %s" ,author)
+	log.Info("header is %s" ,c.Ctx.Request.Header)
 	if author == "" {
 		err = errs.Permission_Deny
 		return

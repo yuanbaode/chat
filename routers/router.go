@@ -14,4 +14,5 @@ func init() {
 	//beego.Router("/create-chat", &controllers.ChatController{}, "get:CreateChat")
 	beego.Router("/rooms/:user_id", &controllers.RoomController{}, "get:GetRooms")
 	beego.Router("/room/:room_id/:user_id", &controllers.RoomController{}, "*:EnterRoom")
+	beego.Router("/room/:room_id/:user_id", &controllers.RoomController{}, "*:BroadcastRoom")
 }
