@@ -4,7 +4,7 @@ import (
 	"github.com/gorilla/websocket"
 	"sync"
 	"encoding/json"
-	"fmt"
+	"mychatroom/log"
 )
 
 type Client struct {
@@ -23,7 +23,9 @@ func NewClient(user User, conn *websocket.Conn) *Client {
 			select {
 			case msg := <-client.Out:
 				data, err := json.Marshal(msg)
-				fmt.Println("client:", string(data), err)
+				if err != nil {
+					log.Error("WriteMessage  marshal err:%s", err.Error())
+				}
 				client.Conn.WriteMessage(websocket.TextMessage, data)
 			}
 		}
@@ -48,7 +50,13 @@ func (m *SyncClientMap) SET(key string, value *Client) {
 	if old, ok := m.Data[key]; ok && old != nil {
 		old.Conn.Close()
 	}
-	m.Data[key] = value
+	if value == nil {
+		delete(m.Data, key)
+	} else {
+
+		m.Data[key] = value
+	}
+	//m.Data[key] = value
 	m.mux.Unlock()
 }
 

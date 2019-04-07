@@ -5,7 +5,6 @@ import (
 	"strconv"
 	"mychatroom/log"
 	"github.com/gorilla/websocket"
-	"encoding/json"
 	"github.com/astaxie/beego/orm"
 )
 
@@ -52,19 +51,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 	ROOMS.Lock.Unlock()
 	room.Clients.SET(strconv.Itoa(int(userId)), client)
 
-	//room.In <- &models.Message{
-	//	MType: models.LOGIN,
-	//	From:  s.Auth,
-	//	Msg:   "login",
-	//}
-	//defer func() {
-	//	room.In <- &models.Message{
-	//		MType: models.LOGOUT,
-	//		From:  s.Auth,
-	//		Msg:   "logout",
-	//	}
-	//}()
-	//启动读协程
+
 
 	var (
 		msgType int
@@ -80,6 +67,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			log.Warn("ReadMessage err:%s\n", err.Error())
 			room.Clients.SET(strconv.Itoa(int(userId)), nil)
 			break
+
 		}
 		if msgType == websocket.TextMessage {
 			infoStored := new(models.InfoStored)
@@ -114,31 +102,10 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
 
 		}
-		//if err != nil {
-		//	break
-		//}
+
 
 	}
 
-	//xOrm := orm.NewOrm()
-	//xOrm.Begin()
-	//defer func() {
-	//	if err != nil {
-	//		xOrm.Rollback()
-	//	} else {
-	//		xOrm.Commit()
-	//	}
-	//}()
-	//user := models.User{Id: userId}
-	//if _, err = user.GetUserById(xOrm, userId); err != nil {
-	//	log.Error("GetUserById err: %s\n", err.Error())
-	//	return
-	//}
-	//user.CurrentRoom = &models.Room{Id: roomId}
-	//if err = user.UpdateUserById(xOrm, userId, "current_room_id"); err != nil {
-	//	log.Error("UpdateUserById err: %s\n", err.Error())
-	//	return
-	//}
 	return
 }
 func (s *RoomService) BroadcastRoom(roomId, userId int64, conn *websocket.Conn) (err error) {
@@ -166,68 +133,4 @@ func (s *RoomService) BroadcastRoom(roomId, userId int64, conn *websocket.Conn) 
 	return
 }
 
-func (s *RoomService) CreateChat(userId int64, isUser bool, conn *websocket.Conn) (err error) {
-	client := models.NewClient(*s.Auth, conn)
-	RoomForWHISPER.Lock.Lock()
-	room, ok := RoomForWHISPER.Data[userId]
-	ROOMS.Lock.Unlock()
-	if !ok {
-		room = models.NewRoom("房间" + strconv.Itoa(int(userId)))
-		room.Id = userId
-		RoomForWHISPER.Lock.Lock()
-		RoomForWHISPER.Data[room.Id] = room
-		RoomForWHISPER.Lock.Unlock()
-	}
-	if isUser {
-		room.Clients.SET(strconv.Itoa(int(userId)), client)
-	} else {
-		room.Clients.SET("Support", client)
-	}
 
-	//启动读协程
-
-	var (
-		msgType int
-		data    []byte
-	)
-	xOrm := orm.NewOrm()
-	for {
-		msgType, data, err = conn.ReadMessage()
-		if err != nil {
-			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
-				log.Error("error: %s", err.Error())
-			}
-			log.Warn("ReadMessage err:%s\n", err.Error())
-			break
-		}
-		if msgType == websocket.TextMessage {
-			var user models.User
-			if isUser {
-				user = client.User
-			} else {
-				user = models.User{Name: "Support"}
-			}
-			msg := &models.Message{models.WHISPER, user, string(data)}
-			room.In <- msg
-			var msgData []byte
-			if msgData, err = json.Marshal(msg); err != nil {
-				log.Error("marshal info error:%s\n", err.Error())
-			} else {
-				historyMsg := new(models.HistoryMessage)
-				historyMsg.UserId = &client.User
-				historyMsg.RoomId = client.User.Id
-				historyMsg.Message = string(msgData)
-				if err = historyMsg.Insert(xOrm); err != nil {
-					log.Error("insert historyMsg error:%s\n", err.Error())
-				}
-			}
-
-		}
-		if err != nil {
-			break
-		}
-
-	}
-
-	return
-}

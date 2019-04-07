@@ -8,7 +8,6 @@ import (
 	"net/http"
 	"strconv"
 	"fmt"
-	"strings"
 	"mychatroom/log"
 )
 
@@ -24,17 +23,13 @@ func (c *MainController) Prepare() {
 			c.Error(err)
 		}
 	}()
-	author := c.Ctx.Input.Header("Sec-Websocket-Protocol")
-	log.Info("header is %s" ,c.Ctx.Request.Header)
+	//author := c.Ctx.Input.Header("Sec-Websocket-Protocol")
+	author:=c.Ctx.Input.Query("access_token")
+	log.Info("token is %s" ,author)
 	if author == "" {
 		err = errs.Permission_Deny
 		return
 	}
-	ss := strings.Split(author, " ")
-	if len(ss) < 2 {
-		err = errs.Permission_Deny
-	}
-	accessToken := ss[1]
 	token := &models.Token{}
 	uId := c.Ctx.Input.Query(":user_id")
 	userId, err := strconv.Atoi(uId)
@@ -48,7 +43,7 @@ func (c *MainController) Prepare() {
 		err = errs.Permission_Deny
 		return
 	}
-	if GetAccessToken != accessToken {
+	if GetAccessToken != author {
 		err = errs.Permission_Deny
 		return
 	}
