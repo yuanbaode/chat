@@ -136,10 +136,10 @@ func NewRoom(name string) *Room {
 	}()
 	go func() {
 		switch room.Id {
-		case 1, 2:
-			randomMessage12(room)
-		case 3, 4:
-			randomMessage34(room)
+		case 1, 3:
+			randomMessage13(room)
+		case 2, 4:
+			randomMessage24(room)
 		default:
 
 		}
@@ -148,7 +148,7 @@ func NewRoom(name string) *Room {
 	return room
 }
 
-func randomMessage12(room *Room) {
+func randomMessage13(room *Room) {
 	url := `https://api.erong28.com/api/lottery/latest/period/short`
 	for {
 		sleepTime := getRandNum(2)
@@ -160,7 +160,7 @@ func randomMessage12(room *Room) {
 		RandomData12(room, url)
 	}
 }
-func randomMessage34(room *Room) {
+func randomMessage24(room *Room) {
 	url := `https://api.erong28.com/api/lottery/latest/period/long`
 	for {
 		sleepTime := getRandNum(40)
