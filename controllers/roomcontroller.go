@@ -64,7 +64,6 @@ func (c *RoomController) BroadcastRoom(){
 		conn.Close()
 	}()
 	rs := room.NewRoomService()
-	rs.Auth = c.User
 	err = rs.BroadcastRoom(int64(roomId), int64(userId), conn)
 }
 func (c *RoomController) EnterRoom() {

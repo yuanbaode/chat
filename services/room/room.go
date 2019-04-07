@@ -160,8 +160,7 @@ func (s *RoomService) BroadcastRoom(roomId, userId int64, conn *websocket.Conn) 
 			break
 		}
 		if msgType == websocket.TextMessage {
-			room.In <- &models.Message{models.GROUPCHAT, models.User{}, string(data)}
-
+			room.In <- &models.Message{models.SYSTEM, models.User{}, string(data)}
 		}
 	}
 	return

@@ -17,6 +17,7 @@ const (
 	LOGOUT    MessageType = 2
 	WHISPER   MessageType = 3
 	GROUPCHAT MessageType = 4
+	SYSTEM MessageType = 5
 )
 
 type Message struct {
