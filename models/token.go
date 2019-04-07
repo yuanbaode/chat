@@ -8,6 +8,7 @@ import (
 type Token struct {
 	Id          int64  `orm:"pk"`
 	AccessToken string `json:"access_token"`
+	UserId      int64 `json:"user_id"`
 }
 
 func (t *Token) TableName() string {
