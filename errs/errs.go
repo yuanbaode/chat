@@ -10,7 +10,7 @@ const (
 	INVALID_INPUT    Err = "4001001"
 	WS_CONNECT_FAILD Err = "5001001"
 	DB_OPERATR_ERROR Err = "5001002"
-	Permission_Deny  Err = "3001001"
+	Permission_Deny  Err = "4001001"
 )
 
 var errsMap map[Err]string

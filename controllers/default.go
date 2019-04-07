@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"strconv"
 	"fmt"
+	"strings"
+	"mychatroom/log"
 )
 
 type MainController struct {
@@ -16,7 +18,39 @@ type MainController struct {
 }
 
 func (c *MainController) Prepare() {
-	c.User = &models.User{ Name: "张无忌"}
+	var err error
+	defer func() {
+		if err != nil {
+			c.Error(err)
+		}
+	}()
+	author := c.Ctx.Input.Header("Authorization")
+	if author == "" {
+		err = errs.Permission_Deny
+		return
+	}
+	ss := strings.Split(author, " ")
+	if len(ss) < 2 {
+		err = errs.Permission_Deny
+	}
+	accessToken := ss[1]
+	token := &models.Token{}
+	uId := c.Ctx.Input.Query(":user_id")
+	userId, err := strconv.Atoi(uId)
+	if err != nil {
+		log.Error("invalid input data, userId :%s illegal . ", uId)
+		return
+	}
+	var GetAccessToken string
+	if GetAccessToken, err = token.GetToken(userId); err != nil {
+		log.Error("GetToken err :%s", err.Error())
+		err = errs.Permission_Deny
+		return
+	}
+	if GetAccessToken != accessToken {
+		err = errs.Permission_Deny
+		return
+	}
 }
 
 func (c *MainController) Success(i interface{}) {
