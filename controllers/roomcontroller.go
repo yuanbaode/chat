@@ -100,7 +100,6 @@ func (c *RoomController) EnterRoom() {
 		conn.Close()
 	}()
 	rs := room.NewRoomService()
-	rs.Auth = c.User
 	err = rs.EnterRoom(int64(roomId), int64(userId), conn)
 
 }
