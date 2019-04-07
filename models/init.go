@@ -24,6 +24,7 @@ func InitModel() {
 	//orm.RegisterModel(new(Room))
 	orm.RegisterModel(new(User))
 	orm.RegisterModel(new(InfoStored))
+	orm.RegisterModel(new(Token))
 
 	if err=orm.RunSyncdb("default", false, true);err!=nil{
 		log.Error("database connect err:%s\n", err.Error())
