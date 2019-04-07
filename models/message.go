@@ -47,6 +47,9 @@ func (i *InfoStored) Insert(xOrm orm.Ormer) (err error) {
 	_, err = xOrm.Insert(i)
 	return
 }
+//func (i *InfoStored) Stored(xOrm orm.Ormer)(err error){
+//
+//}
 func UnmarshalInfo(info []byte, infoStored *InfoStored) error {
 	s := string(info)
 	fmt.Println(s)

@@ -9,6 +9,7 @@ import (
 	"math/rand"
 	"time"
 	"net"
+	"crypto/tls"
 )
 
 var TEXTARRAY []string
@@ -148,7 +149,7 @@ func NewRoom(name string) *Room {
 }
 
 func randomMessage12(room *Room) {
-	url := `http://test.lxh.wiki/api/lottery/latest/period/short`
+	url := `https://api.erong28.com/api/lottery/latest/period/short`
 	for {
 		sleepTime := getRandNum(2)
 		difference := time.Now().Unix() - 1553834100
@@ -160,7 +161,7 @@ func randomMessage12(room *Room) {
 	}
 }
 func randomMessage34(room *Room) {
-	url := `http://test.lxh.wiki/api/lottery/latest/period/long`
+	url := `https://api.erong28.com/api/lottery/latest/period/long`
 	for {
 		sleepTime := getRandNum(40)
 		difference := time.Now().Unix() - 1553834100
@@ -181,6 +182,7 @@ func RandomData(room *Room, apiUrl string) {
 			Timeout: 5 * time.Second,
 		}).Dial,
 		MaxIdleConns: 2,
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 	client := &http.Client{
 		Timeout:   time.Second * 5,

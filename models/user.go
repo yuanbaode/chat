@@ -14,6 +14,7 @@ type User struct {
 	CurrentRoom int64  `orm:"-" json:"current_room"`
 	Password    string ` json:"password"`
 	AvatarUrl   string `json:"avatar_url" orm:"column(avatar_url)"`
+	Balance     int64  `json:"balance"`
 }
 
 func TableName() string {

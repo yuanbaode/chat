@@ -23,7 +23,7 @@ func NewClient(user User, conn *websocket.Conn) *Client {
 			select {
 			case msg := <-client.Out:
 				data, err := json.Marshal(msg)
-				fmt.Println("client:", string(data),err)
+				fmt.Println("client:", string(data), err)
 				client.Conn.WriteMessage(websocket.TextMessage, data)
 			}
 		}
@@ -45,6 +45,9 @@ func NewSyncClientMap() *SyncClientMap {
 }
 func (m *SyncClientMap) SET(key string, value *Client) {
 	m.mux.Lock()
+	if old, ok := m.Data[key]; ok && old != nil {
+		old.Conn.Close()
+	}
 	m.Data[key] = value
 	m.mux.Unlock()
 }

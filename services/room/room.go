@@ -41,15 +41,15 @@ func (s *RoomService) GetRooms() map[int64]*models.Room {
 }
 func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err error) {
 
-	s.Auth, err = s.Auth.GetUserById(models.ORM, 1)
+	s.Auth, err = s.Auth.GetUserById(models.ORM, userId)
 	if err != nil {
 		log.Error("getUser error: %s", err.Error())
 		return
 	}
 	client := models.NewClient(*s.Auth, conn)
-	ROOMS.Lock.RLock()
+	ROOMS.Lock.Lock()
 	room := ROOMS.Data[roomId]
-	ROOMS.Lock.RUnlock()
+	ROOMS.Lock.Unlock()
 	room.Clients.SET(strconv.Itoa(int(userId)), client)
 
 	//room.In <- &models.Message{
@@ -70,7 +70,7 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 		msgType int
 		data    []byte
 	)
-	xOrm := orm.NewOrm()
+
 	for {
 		msgType, data, err = conn.ReadMessage()
 		if err != nil {
@@ -78,20 +78,40 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 				log.Error("error: %s", err.Error())
 			}
 			log.Warn("ReadMessage err:%s\n", err.Error())
+			room.Clients.SET(strconv.Itoa(int(userId)), nil)
 			break
 		}
 		if msgType == websocket.TextMessage {
 			infoStored := new(models.InfoStored)
-			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
 			if err = models.UnmarshalInfo(data, infoStored); err != nil {
 				log.Error("unmarshl info error:%s\n", err.Error())
+				continue
 			} else {
+				xOrm := orm.NewOrm()
 				infoStored.UserId = &client.User
 				infoStored.RoomId = roomId
+				xOrm.Begin()
+
 				if err = infoStored.Insert(xOrm); err != nil {
 					log.Error("Insert info error:%s\n", err.Error())
+					xOrm.Rollback()
+					continue
 				}
+				user := &models.User{}
+				if user, err = user.GetUserById(xOrm, userId); err != nil {
+					log.Error("GetUserById  error:%s", err.Error())
+					xOrm.Rollback()
+					continue
+				}
+				user.Balance = user.Balance - infoStored.Amount
+				if err = user.UpdateUserById(xOrm, userId, "balance"); err != nil {
+					log.Error("update balance err:%s", err.Error())
+					xOrm.Rollback()
+					continue
+				}
+				xOrm.Commit()
 			}
+			room.In <- &models.Message{models.GROUPCHAT, client.User, string(data)}
 
 		}
 		//if err != nil {
