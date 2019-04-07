@@ -24,7 +24,7 @@ func (c *MainController) Prepare() {
 			c.Error(err)
 		}
 	}()
-	author := c.Ctx.Input.Header("Authorization")
+	author := c.Ctx.Input.Header("Sec-Websocket-Protocol")
 	log.Info("header is %s" ,c.Ctx.Request.Header)
 	if author == "" {
 		err = errs.Permission_Deny
