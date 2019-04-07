@@ -29,6 +29,7 @@ func (c *MainController) Prepare() {
 		err = errs.Permission_Deny
 		return
 	}
+	log.Info("header is %s" ,author)
 	ss := strings.Split(author, " ")
 	if len(ss) < 2 {
 		err = errs.Permission_Deny
