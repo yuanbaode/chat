@@ -65,7 +65,6 @@ func (s *RoomService) EnterRoom(roomId, userId int64, conn *websocket.Conn) (err
 				log.Error("error: %s", err.Error())
 			}
 			log.Warn("ReadMessage err:%s\n", err.Error())
-			room.Clients.SET(strconv.Itoa(int(userId)), nil)
 			break
 
 		}
