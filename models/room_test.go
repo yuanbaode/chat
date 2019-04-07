@@ -11,7 +11,7 @@ import (
 
 func TestRandomData(t *testing.T) {
 	fmt.Println(time.Now().Unix())
-	//RandomData(nil)
+	fmt.Println(time.Duration(5) * time.Second)
 }
 
 func TestRandomData12(t *testing.T) {
