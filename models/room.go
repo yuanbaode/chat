@@ -136,10 +136,14 @@ func NewRoom(name string) *Room {
 	}()
 	go func() {
 		switch room.Id {
-		case 1, 3:
-			randomMessage13(room)
-		case 2, 4:
-			randomMessage24(room)
+		case 1:
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/short",2,210)
+		case 2:
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/short",20,210)
+		case 3:
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/long",2,300)
+		case  4:
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/long",20,300)
 		default:
 
 		}
@@ -148,7 +152,7 @@ func NewRoom(name string) *Room {
 	return room
 }
 
-func randomMessage13(room *Room) {
+func randomMessage1(room *Room) {
 	url := `https://api.erong28.com/api/lottery/latest/period/short`
 	for {
 		sleepTime := getRandNum(2)
@@ -160,12 +164,47 @@ func randomMessage13(room *Room) {
 		RandomData12(room, url)
 	}
 }
-func randomMessage24(room *Room) {
+func randomMessage3(room *Room) {
+	url := `https://api.erong28.com/api/lottery/latest/period/long`
+	for {
+		sleepTime := getRandNum(2)
+		difference := time.Now().Unix() - 1553834100
+		if difference%210 < 30 || difference%210 > 200 {
+			continue
+		}
+		time.Sleep(time.Duration(sleepTime) * time.Second)
+		RandomData12(room, url)
+	}
+}
+func randomMessage2(room *Room) {
+	url := `https://api.erong28.com/api/lottery/latest/period/short`
+	for {
+		sleepTime := getRandNum(20)
+		difference := time.Now().Unix() - 1553834100
+		if difference%300 < 30 || difference%210 > 290 {
+			continue
+		}
+		time.Sleep(time.Duration(sleepTime) * time.Second)
+		RandomData(room, url)
+	}
+}
+func randomMessage4(room *Room) {
 	url := `https://api.erong28.com/api/lottery/latest/period/long`
 	for {
 		sleepTime := getRandNum(20)
 		difference := time.Now().Unix() - 1553834100
 		if difference%300 < 30 || difference%210 > 290 {
+			continue
+		}
+		time.Sleep(time.Duration(sleepTime) * time.Second)
+		RandomData(room, url)
+	}
+}
+func randomMessage(room *Room,url string ,sleepRange int, interval int64) {
+	for {
+		sleepTime := getRandNum(sleepRange)
+		difference := time.Now().Unix() - 1553834100
+		if difference%interval < 30 || difference%interval > (interval-10) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)
