@@ -163,9 +163,11 @@ func NewRoom(name string) *Room {
 }
 
 func randomMessage(room *Room,url string ,sleepRange int, interval int64) {
+	var sleepTime int
+	var difference int64
 	for {
-		sleepTime := getRandNum(sleepRange)+1
-		difference := time.Now().Unix() - 1553834100
+		sleepTime = getRandNum(sleepRange)+1
+		difference = time.Now().Unix() - 1553834100
 		if difference%interval < 5 || difference%interval > (interval-10) {
 			continue
 		}
