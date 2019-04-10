@@ -147,11 +147,11 @@ func NewRoom(name string) *Room {
 	go func() {
 		switch room.Id {
 		case 1:
-			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/short",2,210)
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/short",1,210)
 		case 2:
 			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/short",20,210)
 		case 3:
-			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/long",2,300)
+			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/long",1,300)
 		case  4:
 			randomMessage(room,"https://api.erong28.com/api/lottery/latest/period/long",20,300)
 		default:
@@ -164,7 +164,7 @@ func NewRoom(name string) *Room {
 
 func randomMessage(room *Room,url string ,sleepRange int, interval int64) {
 	for {
-		sleepTime := getRandNum(sleepRange)
+		sleepTime := getRandNum(sleepRange)+1
 		difference := time.Now().Unix() - 1553834100
 		if difference%interval < 5 || difference%interval > (interval-10) {
 			continue
