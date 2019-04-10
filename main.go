@@ -10,5 +10,6 @@ func main() {
 	//初始化数据库
 	models.InitModel()
 	beego.BConfig.WebConfig.Session.SessionOn = true
+	beego.BConfig.Listen.EnableAdmin=true
 	beego.Run()
 }
