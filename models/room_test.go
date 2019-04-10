@@ -73,3 +73,11 @@ func TestXXX(t *testing.T){
 	}
 	_=body
 }
+
+func TestInfoStored_TableName(t *testing.T) {
+	for {
+		sleepTime := getRandNum(2)
+		fmt.Println(sleepTime)
+		time.Sleep(time.Duration(sleepTime)*time.Second)
+	}
+}

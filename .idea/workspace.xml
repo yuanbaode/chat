@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01bb9d3e-e8c3-471f-9aa7-8d511aa15cfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/default.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/default.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/room.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,7 +73,7 @@
           <file leaf-file-name="hooks.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../github.com/astaxie/beego/hooks.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="353">
+                <state relative-caret-position="1484">
                   <caret line="87" column="33" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="33" />
                 </state>
               </provider>
@@ -89,16 +88,16 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="room.go" pinned="false" current-in-tab="false">
+          <file leaf-file-name="room.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/room.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-641">
-                  <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+                <state relative-caret-position="606">
+                  <caret line="163" column="5" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="163" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="default.go" pinned="false" current-in-tab="true">
+          <file leaf-file-name="default.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/controllers/default.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="159">
@@ -172,9 +171,9 @@
         <option value="$PROJECT_DIR$/services/room/room.go" />
         <option value="$PROJECT_DIR$/models/room_test.go" />
         <option value="$PROJECT_DIR$/models/init.go" />
-        <option value="$PROJECT_DIR$/models/room.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/controllers/default.go" />
+        <option value="$PROJECT_DIR$/models/room.go" />
       </list>
     </option>
   </component>
@@ -287,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Test.TestInfoStored_TableName in mychatroom/models">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mychatroom" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -296,6 +295,17 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="mychatroom" />
       <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="TestInfoStored_TableName in mychatroom/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="mychatroom" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="mychatroom/models" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestInfoStored_TableName$" />
     </configuration>
     <configuration name="TestRandomData in mychatroom/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mychatroom" />
@@ -319,17 +329,6 @@
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestRandomData12$" />
     </configuration>
-    <configuration name="TestUnmarshalInfo in mychatroom/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="mychatroom" />
-      <working_directory value="$PROJECT_DIR$/models" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="mychatroom/models" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUnmarshalInfo$" />
-    </configuration>
     <configuration name="TestXXX in mychatroom/models" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="mychatroom" />
       <working_directory value="$PROJECT_DIR$/models" />
@@ -343,18 +342,18 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestUnmarshalInfo in mychatroom/models" />
       <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
       <item itemvalue="Go Test.TestXXX in mychatroom/models" />
       <item itemvalue="Go Test.TestRandomData12 in mychatroom/models" />
+      <item itemvalue="Go Test.TestInfoStored_TableName in mychatroom/models" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestInfoStored_TableName in mychatroom/models" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestRandomData in mychatroom/models" />
         <item itemvalue="Go Test.TestRandomData12 in mychatroom/models" />
         <item itemvalue="Go Test.TestXXX in mychatroom/models" />
-        <item itemvalue="Go Test.TestUnmarshalInfo in mychatroom/models" />
       </list>
     </recent_temporary>
   </component>
@@ -394,14 +393,14 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46753246" visible="true" weight="0.11940298" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4684096" visible="true" weight="0.11940298" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
-      <window_info id="Structure" order="1" sideWeight="0.53246754" side_tool="true" visible="true" weight="0.11940298" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info id="Structure" order="1" sideWeight="0.5315904" side_tool="true" visible="true" weight="0.11940298" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.19716775" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -422,13 +421,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/models/room.go</url>
-          <line>154</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="3" />
     </breakpoint-manager>
   </component>
@@ -687,24 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/router.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/app.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/room.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-641">
-          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -736,10 +714,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../github.com/astaxie/beego/hooks.go">
+    <entry file="file://$PROJECT_DIR$/controllers/default.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="87" column="33" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="33" />
+        <state relative-caret-position="159">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -750,6 +728,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../github.com/astaxie/beego/hooks.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1484">
+          <caret line="87" column="33" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -757,10 +742,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/default.go">
+    <entry file="file://$PROJECT_DIR$/routers/router.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="435">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/room.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="163" column="5" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="163" selection-end-column="5" />
         </state>
       </provider>
     </entry>

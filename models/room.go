@@ -26,7 +26,7 @@ func init() {
 	}
 	TEXTARRAY = append(TEXTARRAY, array ...)
 	AmountArray = make([]int64, 0, 100)
-	for i := 1; i < 11; i++ {
+	for i := 1; i < 101; i++ {
 		AmountArray = append(AmountArray, int64(i*5))
 	}
 	UserNameArray := []string{
@@ -152,54 +152,6 @@ func NewRoom(name string) *Room {
 	return room
 }
 
-func randomMessage1(room *Room) {
-	url := `https://api.erong28.com/api/lottery/latest/period/short`
-	for {
-		sleepTime := getRandNum(2)
-		difference := time.Now().Unix() - 1553834100
-		if difference%210 < 30 || difference%210 > 200 {
-			continue
-		}
-		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData12(room, url)
-	}
-}
-func randomMessage3(room *Room) {
-	url := `https://api.erong28.com/api/lottery/latest/period/long`
-	for {
-		sleepTime := getRandNum(2)
-		difference := time.Now().Unix() - 1553834100
-		if difference%210 < 30 || difference%210 > 200 {
-			continue
-		}
-		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData12(room, url)
-	}
-}
-func randomMessage2(room *Room) {
-	url := `https://api.erong28.com/api/lottery/latest/period/short`
-	for {
-		sleepTime := getRandNum(20)
-		difference := time.Now().Unix() - 1553834100
-		if difference%300 < 30 || difference%210 > 290 {
-			continue
-		}
-		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room, url)
-	}
-}
-func randomMessage4(room *Room) {
-	url := `https://api.erong28.com/api/lottery/latest/period/long`
-	for {
-		sleepTime := getRandNum(20)
-		difference := time.Now().Unix() - 1553834100
-		if difference%300 < 30 || difference%210 > 290 {
-			continue
-		}
-		time.Sleep(time.Duration(sleepTime) * time.Second)
-		RandomData(room, url)
-	}
-}
 func randomMessage(room *Room,url string ,sleepRange int, interval int64) {
 	for {
 		sleepTime := getRandNum(sleepRange)
