@@ -26,9 +26,19 @@ func init() {
 	}
 	TEXTARRAY = append(TEXTARRAY, array ...)
 	AmountArray = make([]int64, 0, 100)
-	for i := 1; i < 101; i++ {
+	for i := 1; i < 11; i++ {
 		AmountArray = append(AmountArray, int64(i*5))
 	}
+	for i := 1; i < 6; i++ {
+		AmountArray = append(AmountArray, int64(i*10+50))
+	}
+	for i := 1; i < 5; i++ {
+		AmountArray = append(AmountArray, int64(i*50+100))
+	}
+	for i := 1; i < 3; i++ {
+		AmountArray = append(AmountArray, int64(i*100+100))
+	}
+
 	UserNameArray := []string{
 		"刘思恬4月飞日本",
 		"蔡莉",
@@ -156,7 +166,7 @@ func randomMessage(room *Room,url string ,sleepRange int, interval int64) {
 	for {
 		sleepTime := getRandNum(sleepRange)
 		difference := time.Now().Unix() - 1553834100
-		if difference%interval < 30 || difference%interval > (interval-10) {
+		if difference%interval < 5 || difference%interval > (interval-10) {
 			continue
 		}
 		time.Sleep(time.Duration(sleepTime) * time.Second)

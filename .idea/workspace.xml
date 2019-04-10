@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01bb9d3e-e8c3-471f-9aa7-8d511aa15cfa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/room.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +36,8 @@
           <file leaf-file-name="room_test.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/models/room_test.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="377">
-                  <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+                <state relative-caret-position="334">
+                  <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
                 </state>
               </provider>
             </entry>
@@ -52,11 +51,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="232">
-                  <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+                <state relative-caret-position="319">
+                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
                 </state>
               </provider>
             </entry>
@@ -88,11 +87,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="room.go" pinned="false" current-in-tab="true">
+          <file leaf-file-name="room.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/models/room.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="606">
-                  <caret line="163" column="5" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="163" selection-end-column="5" />
+                <state relative-caret-position="377">
+                  <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -169,11 +168,11 @@
         <option value="$PROJECT_DIR$/controllers/roomcontroller.go" />
         <option value="$PROJECT_DIR$/models/client.go" />
         <option value="$PROJECT_DIR$/services/room/room.go" />
-        <option value="$PROJECT_DIR$/models/room_test.go" />
         <option value="$PROJECT_DIR$/models/init.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/controllers/default.go" />
+        <option value="$PROJECT_DIR$/models/room_test.go" />
         <option value="$PROJECT_DIR$/models/room.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
@@ -188,7 +187,7 @@
       <path value="$PROJECT_DIR$/static/mdl/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="408" />
     <option name="y" value="42" />
     <option name="width" value="1400" />
@@ -358,9 +357,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRandomData_in_mychatroom_models - 2019.03.30 at 17h 43m 00s.xml">
-      <configuration name="TestRandomData in mychatroom/models" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestRandomData_in_mychatroom_models - 2019.03.31 at 16h 37m 19s.xml">
       <configuration name="TestRandomData in mychatroom/models" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -388,20 +384,22 @@
     <history-entry file="TestRandomData_in_mychatroom_models - 2019.04.07 at 20h 16m 16s.xml">
       <configuration name="TestRandomData in mychatroom/models" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestInfoStored_TableName_in_mychatroom_models - 2019.04.11 at 00h 14m 06s.xml">
+      <configuration name="TestInfoStored_TableName in mychatroom/models" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4684096" visible="true" weight="0.11940298" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.468114" visible="true" weight="0.11940298" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
-      <window_info id="Structure" order="1" sideWeight="0.5315904" side_tool="true" visible="true" weight="0.11940298" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.19716775" />
+      <window_info id="Structure" order="1" sideWeight="0.53188604" side_tool="true" visible="true" weight="0.11940298" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19716775" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -686,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/room_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/room/room.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -735,10 +726,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/models/room_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        <state relative-caret-position="334">
+          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/room.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -749,10 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/room.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="163" column="5" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="163" selection-end-column="5" />
+        <state relative-caret-position="319">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
