@@ -54,6 +54,10 @@ func (c *RoomController) BroadcastRoom(){
 		log.Error("invalid input data, userId :%s illegal . ", rId)
 		return
 	}
+	if userId!=1{
+		log.Error("not admin .")
+		return
+	}
 	conn, err := Upgrade.Upgrade(c.Ctx.ResponseWriter, c.Ctx.Request, nil)
 	if err != nil {
 		log.Error("new ws connect faild .  err:%s\n", err.Error())
