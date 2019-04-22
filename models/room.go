@@ -26,7 +26,7 @@ func init() {
 	}
 	TEXTARRAY = append(TEXTARRAY, array ...)
 	AmountArray = make([]int64, 0, 100)
-	for i := 1; i < 11; i++ {
+	for i := 6; i < 11; i++ {
 		AmountArray = append(AmountArray, int64(i*5))
 	}
 	for i := 1; i < 6; i++ {
@@ -35,8 +35,11 @@ func init() {
 	for i := 1; i < 5; i++ {
 		AmountArray = append(AmountArray, int64(i*50+100))
 	}
-	for i := 1; i < 3; i++ {
+	for i := 1; i < 10; i++ {
 		AmountArray = append(AmountArray, int64(i*100+100))
+	}
+	for i := 1; i < 5; i++ {
+		AmountArray = append(AmountArray, int64(i*500+1000))
 	}
 	UserAvata1 = []string{
 		"http://wx.qlogo.cn/mmhead/ver_1/z689IfevxjxZyOIodhVeo3Lj9eW5vELIiaKvZz5sabhso4CeT7sbZraBbJfbtACQ2UP23ONQXqyh2zRehYN5aFWf2R9PdTwicNCcjeQv4wpoc/0",

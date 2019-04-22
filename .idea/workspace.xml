@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01bb9d3e-e8c3-471f-9aa7-8d511aa15cfa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/room.go" afterDir="false" />
-    </list>
+    <list default="true" id="01bb9d3e-e8c3-471f-9aa7-8d511aa15cfa" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,14 +89,15 @@
       <file leaf-file-name="room.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/room.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1804">
-              <caret line="180" column="157" selection-start-line="180" selection-start-column="157" selection-end-line="180" selection-end-column="157" />
+            <state relative-caret-position="-2328">
+              <caret line="1251" column="19" selection-start-line="1251" selection-start-column="19" selection-end-line="1251" selection-end-column="19" />
               <folding>
                 <element signature="e#30531#32867#0" />
                 <element signature="e#32891#60532#0" />
                 <element signature="e#60555#62796#0" />
                 <element signature="e#62818#90067#0" />
                 <element signature="e#90114#92447#0" />
+                <element signature="e#92471#120628#0" />
               </folding>
             </state>
           </provider>
@@ -183,7 +181,7 @@
       <path value="$PROJECT_DIR$/static/mdl/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="408" />
     <option name="y" value="42" />
     <option name="width" value="1400" />
@@ -386,7 +384,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46476966" visible="true" weight="0.12260128" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -749,14 +746,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/room.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1804">
-          <caret line="180" column="157" selection-start-line="180" selection-start-column="157" selection-end-line="180" selection-end-column="157" />
+        <state relative-caret-position="-2328">
+          <caret line="1251" column="19" selection-start-line="1251" selection-start-column="19" selection-end-line="1251" selection-end-column="19" />
           <folding>
             <element signature="e#30531#32867#0" />
             <element signature="e#32891#60532#0" />
             <element signature="e#60555#62796#0" />
             <element signature="e#62818#90067#0" />
             <element signature="e#90114#92447#0" />
+            <element signature="e#92471#120628#0" />
           </folding>
         </state>
       </provider>
